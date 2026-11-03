@@ -1,0 +1,17 @@
+TITULOS_EXCLUIDOS = {
+    "BANG CHAN'S INTERVIEW WITH SEUNGMIN",
+    "CHANGBIN'S INTERVIEW WITH HYUNJIN",
+    "FELIX'S INTERVIEW WITH HAN",
+    "HAN'S INTERVIEW WITH FELIX",
+    "HYUNJIN'S INTERVIEW WITH CHANGBIN",
+    "I.N'S INTERVIEW WITH LEE KNOW",
+    "LEE KNOW'S INTERVIEW WITH I.N",
+    "SEUNGMIN'S INTERVIEW WITH BANG CHAN",
+    "Jacket Shooting Making Movie",
+    "Music Video",
+    "Music Video Making Movie",
+    "Photobook",
+    "Recording Making Movie",
+    "『Astronaut』 Music Video",
+    "『Levanter』 Music Video",
+}
