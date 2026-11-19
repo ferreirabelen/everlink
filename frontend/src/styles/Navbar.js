@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
   width: 100%;
@@ -8,20 +9,14 @@ export const Nav = styled.nav`
   justify-content: space-between;
 `;
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   font-family: "Fraunces", serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.contraste};
 `;
 
-export const Links = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-`;
-
-export const NavLink = styled.a`
+export const NavLink = styled(Link)`
   font-size: 0.95rem;
   color: ${({ theme }) => theme.colors.contraste};
   transition: opacity 0.2s ease;
@@ -30,3 +25,10 @@ export const NavLink = styled.a`
     opacity: 0.7;
   }
 `;
+
+export const Links = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+

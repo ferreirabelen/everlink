@@ -12,6 +12,17 @@ function SearchForm() {
     const [msjError, setMsjError] = useState("")
     const [resultadoBusqueda, setResultadoBusqueda] = useState(null)
     const [loading, setLoading] = useState(false)
+    const [favoriteSong, setFavoriteSong] = useState([])
+
+    function cancionFavorita(index) {
+        setFavoriteSong((prevFavoritos) => {
+            if (prevFavoritos.includes(index)) {
+                return prevFavoritos.filter((favoriteSong) => favoriteSong !== index);
+            }
+
+            return [...prevFavoritos, index]
+        })
+    }
 
     function manejarEnvio(e) {
         e.preventDefault();
@@ -80,8 +91,12 @@ function SearchForm() {
                         <Span>YOUR SONG COLLECTION</Span>
 
                         <ResultsTitle>
-                            Songs you can make ✨
+                            Canciones disponibles
                         </ResultsTitle>
+
+                        <p>
+                            Resultados para: <strong>{resultadoBusqueda.letras_recibidas}</strong>
+                        </p>
 
                         <p>
                             Canciones de {resultadoBusqueda.artista} que podés crear con tus letras.
@@ -115,7 +130,18 @@ function SearchForm() {
                                             {resultadoBusqueda.artista.toLowerCase()}
                                         </SongArtist>
 
-                                        <FavoriteIcon>♡</FavoriteIcon>
+                                        <FavoriteIcon
+                                            type="button"
+                                            $favorito={favoriteSong.includes(index)}
+                                            onClick={() => cancionFavorita(index)}
+                                            aria-label={
+                                                favoriteSong.includes(index)
+                                                    ? "Quitar de favoritos"
+                                                    : "Agregar a favoritos"
+                                            }
+                                        >
+                                            ♥
+                                        </FavoriteIcon>
                                     </SongCardBottom>
                                 </SongCard>
                             ))}

@@ -225,11 +225,22 @@ export const SongArtist = styled.span`
   text-transform: lowercase;
 `;
 
-export const FavoriteIcon = styled.span`
-  color: ${({ theme }) => theme.colors.contraste};
-  font-size: 2.2rem;
-  cursor:  pointer;
-  opacity: 0.65;
+export const FavoriteIcon = styled.button`
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    color: ${({ $favorito }) =>
+        $favorito ? "#E45B68" : "#fff"};
+
+
+    font-size: 2.2rem;
+    opacity: 0.8;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 `;
 
 
