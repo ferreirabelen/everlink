@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import FooterContent from "../components/Footer";
-import { PageContainer, PageContent } from "../styles/Guardados";
+import { PageContainer, PageContent } from "../styles/Inspiracion";
 
 function InspiracionPage() {
     return (

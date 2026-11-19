@@ -1,5 +1,4 @@
 import {Nav, Logo, Links, NavLink} from "../styles/Navbar"
-import {Link} from "react-router-dom"
 
 function Navbar(){
     return (
