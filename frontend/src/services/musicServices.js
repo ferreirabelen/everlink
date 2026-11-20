@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function buscarCanciones(letras) {
-    const respuesta = await fetch("http://127.0.0.1:5000/api/buscar", {
+    const respuesta = await fetch(`${API_URL}/api/buscar`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,11 +20,12 @@ export async function buscarCanciones(letras) {
 }
 
 export async function recibir_info() {
+    const respuesta = await fetch(`${API_URL}/api/info`);
 
-  const respuesta = await fetch("http://127.0.0.1:5000/api/info")
-  if (!respuesta.ok) {
-    throw new Error("No se pudo obtener la información");
-  }
-  const datos = await respuesta.json();
-  return datos;
+    if (!respuesta.ok) {
+        throw new Error("No se pudo obtener la información");
+    }
+
+    const datos = await respuesta.json();
+    return datos;
 }
